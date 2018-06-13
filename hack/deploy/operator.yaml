@@ -35,12 +35,6 @@ spec:
         - --tls-cert-file=/var/serving-cert/tls.crt
         - --tls-private-key-file=/var/serving-cert/tls.key
         - --enable-analytics=${KUBEDB_ENABLE_ANALYTICS}
-        env:
-        - name: OPERATOR_NAMESPACE
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: metadata.namespace
         ports:
         - containerPort: 8443
         volumeMounts:
